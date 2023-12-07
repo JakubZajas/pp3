@@ -32,7 +32,6 @@ public class StudentGrades {
             scanner.nextLine();
             enteredGrades[i] = scanner.nextDouble();
         }
-
         this.grades=enteredGrades;
         scanner.close();
 

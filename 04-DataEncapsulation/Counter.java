@@ -1,9 +1,21 @@
 public class Counter {
     private int counter=0;
 
+    public static void main(String[] args) {
+        Counter o = new Counter();
+        System.out.println(o.value());
+        o.increase();
+        o.increase();
+        o.decrease();
+        o.increase(5);
+        o.decrease(2);
+        System.out.println(o.value());
+    }
+
     public void increase(){
         counter++;
     }
+
     public void decrease(){
         counter--;
     }
@@ -17,19 +29,6 @@ public class Counter {
         return counter;
     }
 
-    public static void main(String[] args) {
-        Counter c = new Counter();
-        System.out.println(c.value());
-        c.increase();
-        c.increase();
-        c.increase();
-        System.out.println(c.value());   
-        c.decrease();   
-        System.out.println(c.value());   
-        c.increase(10);
-        System.out.println(c.value()); 
-        c.decrease(5);
-        System.out.println(c.value()); 
-
-    }
+    
 }
+

@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class MyArray {
     public static int even(int[] array){
         int values=0;
@@ -33,7 +37,7 @@ public class MyArray {
         return array1.equals(array2);
     }
 
-    public static int[] different(int[] array1, int[] array2){
+    public static int[] different1(int[] array1, int[] array2){
         String difference="";
         int[] result=new int[array1.length];
         int counter=0;
@@ -53,6 +57,22 @@ public class MyArray {
         System.out.println(difference);
         return result;
 }
+public static  List<Integer> diffrent(int[] array1, int[] array2){
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for(int num : array1){
+            map.put(num, map.getOrDefault(num,0) +1);
+        }
+        List<Integer> result = new ArrayList<>();
+        for(int num : array2){
+            if(!map.containsKey(num)){
+                result.add(num);
+            }
+        }
+        return result;
+
+}
+
     public static boolean exist(int number, int[] array){
         for(int i:array){
             if(i==number){
@@ -110,19 +130,19 @@ public class MyArray {
             {4,5,6},
             {7,8,9}
         };
-        System.out.println(even(array1));
-        System.out.println(positiveOdd(array1));
-        System.out.println(reverese(array2));
-        System.out.println(compare(array1, array2));
-        System.out.println(compare(array1, array1));
-        System.out.println(different(array1, array2));
-        different(array1, array2);
-        System.out.println(exist(1,array1));
-        System.out.println(exist(10,array1));
-        System.out.println(secondMax(array3));
-        System.out.println(Column(array4));
-        System.out.println(swap(array4));
-        System.out.println(two2one(array4));
+        // System.out.println(even(array1));
+        // System.out.println(positiveOdd(array1));
+        // System.out.println(reverese(array2));
+        // System.out.println(compare(array1, array2));
+        // System.out.println(compare(array1, array1));
+         System.out.println(different1(array1, array2));
+        // different(array1, array2);
+        // System.out.println(exist(1,array1));
+        // System.out.println(exist(10,array1));
+        // System.out.println(secondMax(array3));
+        // System.out.println(Column(array4));
+        // System.out.println(swap(array4));
+        // System.out.println(two2one(array4));
         
     }
 }
